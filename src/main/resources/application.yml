@@ -1,0 +1,20 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: sc-consumer
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+logging:
+  level:
+    com.lagou.edu.controller.service.ResumeServiceFeignClient: debug
+eureka:
+  client:
+    service-url:
+      defaultZone: http://euk-server-1:9001/eureka,http://euk-server-2:9002/eureka
